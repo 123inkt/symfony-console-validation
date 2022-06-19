@@ -18,7 +18,7 @@ class ViolationException extends Exception
         $messages = [];
         /** @var ConstraintViolationInterface $violation */
         foreach ($this->violations as $violation) {
-            $messages[] = sprintf('%s: %s', $violation->getPropertyPath(), $violation->getMessage());
+            $messages[] = sprintf('%s: %s', str_replace(['[', ']'], '', $violation->getPropertyPath()), $violation->getMessage());
         }
 
         parent::__construct(implode("\n", $messages), $code, $previous);
