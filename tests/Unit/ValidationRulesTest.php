@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit;
 
 use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -24,6 +25,17 @@ class ValidationRulesTest extends TestCase
 
         $rules = new ValidationRules($config);
         static::assertSame($config, $rules->getDefinitions());
+    }
+
+    /**
+     * @covers ::__construct
+     * @covers ::getDefinitions
+     */
+    public function testConstructorFailure(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Expecting at most `arguments` or `options` ');
+        new ValidationRules(['foobar']);
     }
 
     /**
