@@ -37,7 +37,7 @@ abstract class AbstractValidatedInput
         $messages = [];
         /** @var ConstraintViolationInterface $violation */
         foreach ($this->violationList as $violation) {
-            $messages[] = $violation->getMessage();
+            $messages[] = (string)$violation->getMessage();
         }
 
         return $messages;
