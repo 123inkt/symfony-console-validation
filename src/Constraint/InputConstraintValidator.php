@@ -22,29 +22,19 @@ class InputConstraintValidator extends ConstraintValidator
 
         $context = $this->context;
         if ($value instanceof InputInterface === false) {
-            $context->buildViolation($constraint->wrongTypeMessage)
-                ->setCode($constraint::WRONG_VALUE_TYPE)
-                ->addViolation();
+            $context->buildViolation($constraint->wrongTypeMessage)->setCode($constraint::WRONG_VALUE_TYPE)->addViolation();
 
             return;
         }
 
-        $this->validateArguments($constraint, $value);
-        $this->validateOptions($constraint, $value);
-    }
-
-    private function validateArguments(InputConstraint $constraint, InputInterface $input): void
-    {
+        // validate arguments
         if ($constraint->arguments !== null) {
-            $this->context->getValidator()->inContext($this->context)->validate($input->getArguments(), $constraint->arguments);
+            $this->context->getValidator()->inContext($this->context)->validate($value->getArguments(), $constraint->arguments);
         }
-    }
 
-    private function validateOptions(InputConstraint $constraint, InputInterface $input): void
-    {
-        $options = array_filter($input->getOptions(), static fn($option) => $option !== null);
-
+        // validate options
         if ($constraint->options !== null) {
+            $options = array_filter($value->getOptions(), static fn($option) => $option !== null);
             $this->context->getValidator()->inContext($this->context)->validate($options, $constraint->options);
         }
     }
