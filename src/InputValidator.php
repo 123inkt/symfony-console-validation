@@ -30,17 +30,10 @@ class InputValidator
         $constraint = $this->constraintFactory->createConstraint($validatedInputClass::getValidationRules());
         $violations = $this->validator->validate($input, $constraint);
 
-        /** @var AbstractValidatedInput $validatedInput */
-        $validatedInput = new $validatedInputClass($input, $violations);
-        if ($throw && $validatedInput->isValid() === false) {
-            throw new ViolationException($validatedInput->getViolationMessages());
+        if ($throw && count($violations) > 0) {
+            throw new ViolationException($violations);
         }
 
-        return $validatedInput;
-    }
-
-    public function getName(): string
-    {
-        return 'validator';
+        return new $validatedInputClass($input, $violations);
     }
 }
