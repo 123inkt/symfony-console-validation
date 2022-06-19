@@ -25,7 +25,7 @@ class ValidationRules
             throw new InvalidArgumentException('Expecting at most `arguments` or `options` property to be set');
         }
 
-        $this->definitions      = $definitions;
+        $this->definitions = $definitions;
     }
 
     /**
