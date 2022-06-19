@@ -44,7 +44,7 @@ class ValidationRules
     /**
      * @phpstan-param ConstraintList $constraintList
      */
-    public function addOptionConstraint(string $optionName, Constraint|array $constraintList): static
+    public function addOptionConstraint(string $optionName, string|Constraint|array $constraintList): static
     {
         $this->definitions['options'][$optionName] = $constraintList;
 
