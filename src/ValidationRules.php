@@ -17,7 +17,6 @@ class ValidationRules
 
     /**
      * @phpstan-param DefinitionCollection $definitions
-     * @param bool                         $allowExtraFields Allow the input to have extra fields, not present in the definition list
      */
     public function __construct(array $definitions = [])
     {

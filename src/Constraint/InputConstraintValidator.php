@@ -40,26 +40,18 @@ class InputConstraintValidator extends ConstraintValidator
                 ->inContext($this->context)
                 ->atPath('[arguments]')
                 ->validate($input->getArguments(), $constraint->arguments);
-        } elseif ($constraint->allowExtraFields === false && count($input->getArguments()) > 0) {
-            $this->context->buildViolation($constraint->queryMessage)
-                ->atPath('[arguments]')
-                ->setCode($constraint::MISSING_ARGUMENTS_CONSTRAINT)
-                ->addViolation();
         }
     }
 
     private function validateOptions(InputConstraint $constraint, InputInterface $input): void
     {
+        $options = array_filter($input->getOptions(), static fn($option) => $option === null);
+
         if ($constraint->options !== null) {
             $this->context->getValidator()
                 ->inContext($this->context)
                 ->atPath('[options]')
-                ->validate($input->getOptions(), $constraint->options);
-        } elseif ($constraint->allowExtraFields === false && count($input->getOptions()) > 0) {
-            $this->context->buildViolation($constraint->requestMessage)
-                ->atPath('[options]')
-                ->setCode($constraint::MISSING_OPTIONS_CONSTRAINT)
-                ->addViolation();
+                ->validate($options, $constraint->options);
         }
     }
 }
