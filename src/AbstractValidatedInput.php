@@ -3,26 +3,17 @@ declare(strict_types=1);
 
 namespace DigitalRevolution\SymfonyInputValidation;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory;
-use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
-use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 abstract class AbstractValidatedInput
 {
-    /** @var ConstraintViolationListInterface<ConstraintViolationInterface> */
-    private ConstraintViolationListInterface $violationList;
-
     /**
-     * @throws InvalidRuleException
+     * @param ConstraintViolationListInterface<ConstraintViolationInterface> $violationList
      */
-    public function __construct(private InputInterface $input, ValidatorInterface $validator, ?InputConstraintFactory $constraintFactory = null)
+    public function __construct(protected InputInterface $input, protected ConstraintViolationListInterface $violationList)
     {
-        $constraintFactory   ??= new InputConstraintFactory(new ConstraintFactory());
-        $this->violationList = $validator->validate($this->input, $constraintFactory->createConstraint($this->getValidationRules()));
     }
 
     public function isValid(): bool
@@ -39,7 +30,21 @@ abstract class AbstractValidatedInput
     }
 
     /**
-     * Get all the constraints for the current query params
+     * @return string[]
      */
-    abstract protected function getValidationRules(): ValidationRules;
+    public function getViolationMessages(): array
+    {
+        $messages = [];
+        /** @var ConstraintViolationInterface $violation */
+        foreach ($this->violationList as $violation) {
+            $messages[] = $violation->getMessage();
+        }
+
+        return $messages;
+    }
+
+    /**
+     * Get all the constraints for the current input
+     */
+    abstract public static function getValidationRules(): ValidationRules;
 }

@@ -7,7 +7,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
-class ViolationListRenderer
+class ViolationListRenderer extends Output
 {
     public function __construct(private OutputInterface $output)
     {
