@@ -24,18 +24,8 @@ class InputConstraintFactory
     {
         $options = [];
         foreach ($validationRules->getDefinitions() as $key => $definitions) {
-            $options[$key] = $this->factory->fromRuleDefinitions($definitions, $validationRules->isAllowExtraFields());
+            $options[$key] = $this->factory->fromRuleDefinitions($definitions, true);
         }
-
-        /**
-         * @var array{
-         *     arguments?: Constraint|Constraint[],
-         *     options?: Constraint|Constraint[],
-         *     allowExtraFields: bool
-         * } $options
-         */
-        // Set extra constraint options
-        $options['allowExtraFields'] = $validationRules->isAllowExtraFields();
 
         return new InputConstraint($options);
     }

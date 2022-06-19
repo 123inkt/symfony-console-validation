@@ -33,9 +33,8 @@ class InputConstraint extends Constraint
     /**
      * @param array{
      *     arguments?: Constraint|Constraint[],
-     *     options?: Constraint|Constraint[],
-     *     allowExtraFields?: bool
-     *     }|null $options
+     *     options?: Constraint|Constraint[]
+     * }|null $options
      */
     public function __construct($options = null)
     {
@@ -43,13 +42,13 @@ class InputConstraint extends Constraint
         $options                     = $options ?? [];
         $options['arguments']        = $options['arguments'] ?? null;
         $options['options']          = $options['options'] ?? null;
-        $options['allowExtraFields'] = $options['allowExtraFields'] ?? false;
+        $options['allowExtraFields'] = true;
 
         parent::__construct($options);
     }
 
     public function getRequiredOptions(): array
     {
-        return ['arguments', 'options', 'allowExtraFields'];
+        return ['arguments', 'options'];
     }
 }
