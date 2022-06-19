@@ -7,7 +7,6 @@ use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
-use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 /**
  * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Exception\ViolationException

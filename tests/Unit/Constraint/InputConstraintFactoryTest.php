@@ -8,7 +8,6 @@ use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory;
 use DigitalRevolution\SymfonyInputValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints as Assert;
 
