@@ -45,6 +45,6 @@ class ValidationRulesTest extends TestCase
     {
         $rules = new ValidationRules();
         $rules->addOptionConstraint('email', 'required|string');
-        static::assertSame(['arguments' => ['email' => 'required|string']], $rules->getDefinitions());
+        static::assertSame(['options' => ['email' => 'required|string']], $rules->getDefinitions());
     }
 }
