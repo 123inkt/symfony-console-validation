@@ -7,7 +7,7 @@ use InvalidArgumentException;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * @phpstan-type ConstraintList string|Constraint|array<string, string|Constraint|array<string|Constraint>>
+ * @phpstan-type ConstraintList array<string, string|Constraint|array<string|Constraint>>
  * @phpstan-type DefinitionCollection array{arguments?: ConstraintList, options?: ConstraintList }
  */
 class ValidationRules
@@ -29,7 +29,7 @@ class ValidationRules
     }
 
     /**
-     * @phpstan-param ConstraintList $constraintList
+     * @phpstan-param string|Constraint|array<string|Constraint> $constraintList
      */
     public function addArgumentConstraint(string $argumentName, string|Constraint|array $constraintList): static
     {
@@ -39,7 +39,7 @@ class ValidationRules
     }
 
     /**
-     * @phpstan-param ConstraintList $constraintList
+     * @phpstan-param string|Constraint|array<string|Constraint> $constraintList
      */
     public function addOptionConstraint(string $optionName, string|Constraint|array $constraintList): static
     {

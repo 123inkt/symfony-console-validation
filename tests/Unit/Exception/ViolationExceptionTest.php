@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Exception;
+namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit\Exception;
 
 use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
 use PHPUnit\Framework\TestCase;
