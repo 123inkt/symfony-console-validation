@@ -24,7 +24,7 @@ use DigitalRevolution\SymfonyInputValidation\ValidationRules;
 
 class ExampleInput extends AbstractValidatedInput
 {
-    protected function getValidationRules(): ValidationRules
+    public static function getValidationRules(): ValidationRules
     {
         return new ValidationRules([
             'arguments' => [
