@@ -4,11 +4,11 @@ declare(strict_types=1);
 namespace DigitalRevolution\SymfonyInputValidation;
 
 use InvalidArgumentException;
-use Symfony\Component\Validator\Constraint;
 
 /**
+ * @phpstan-type Constraint \Symfony\Component\Validator\Constraint
  * @phpstan-type ConstraintList Constraint|array<string, string|Constraint|array<string|Constraint>>
- * @phpstan-type DefinitionCollection array{arguments?: DefinitionCollection, options?: DefinitionCollection }
+ * @phpstan-type DefinitionCollection array{arguments?: ConstraintList, options?: ConstraintList }
  */
 class ValidationRules
 {

@@ -11,7 +11,7 @@ class InputConstraint extends Constraint
     public const MISSING_ARGUMENTS_CONSTRAINT = 'ab383f80-ee51-4fdd-bdeb-36d868fe1e13';
     public const MISSING_OPTIONS_CONSTRAINT   = 'e6808855-9b1f-498a-8f5a-0df219c3cb97';
 
-    /** @var array<string, string> */
+    /** @var mixed */
     protected static $errorNames = [
         self::WRONG_VALUE_TYPE             => 'WRONG_VALUE_TYPE',
         self::MISSING_ARGUMENTS_CONSTRAINT => 'MISSING_ARGUMENTS_CONSTRAINT',
