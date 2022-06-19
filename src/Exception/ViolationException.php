@@ -16,8 +16,9 @@ class ViolationException extends Exception
     public function __construct(private ConstraintViolationListInterface $violations, int $code = 0, ?Throwable $previous = null)
     {
         $messages = [];
+        /** @var ConstraintViolationInterface $violation */
         foreach ($this->violations as $violation) {
-            $messages[] = $violation->getMessage();
+            $messages[] = sprintf('%s: %s', $violation->getPropertyPath(), $violation->getMessage());
         }
 
         parent::__construct(implode("\n", $messages), $code, $previous);
