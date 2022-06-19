@@ -36,7 +36,7 @@ class InputConstraintValidator extends ConstraintValidator
     private function validateArguments(InputConstraint $constraint, InputInterface $input): void
     {
         if ($constraint->arguments !== null) {
-            $this->context->getValidator()->validate($input->getArguments(), $constraint->arguments);
+            $this->context->getValidator()->inContext($this->context)->validate($input->getArguments(), $constraint->arguments);
         }
     }
 
@@ -45,7 +45,7 @@ class InputConstraintValidator extends ConstraintValidator
         $options = array_filter($input->getOptions(), static fn($option) => $option !== null);
 
         if ($constraint->options !== null) {
-            $this->context->getValidator()->validate($options, $constraint->options);
+            $this->context->getValidator()->inContext($this->context)->validate($options, $constraint->options);
         }
     }
 }
