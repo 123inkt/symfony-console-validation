@@ -20,12 +20,12 @@ class ViolationExceptionTest extends TestCase
      */
     public function testConstruct(): void
     {
-        $violationA = new ConstraintViolation('messageA', null, [], null, 'pathA', null);
-        $violationB = new ConstraintViolation('messageB', null, [], null, 'pathB', null);
+        $violationA = new ConstraintViolation('messageA', null, [], null, 'pathA', 'invalidA');
+        $violationB = new ConstraintViolation('messageB', null, [], null, 'pathB', 'invalidB');
         $list       = new ConstraintViolationList([$violationA, $violationB]);
 
         $exception = new ViolationException($list);
-        static::assertSame("pathA: messageA\npathB: messageB", $exception->getMessage());
+        static::assertSame("pathA: messageA. Value given `invalidA`.\npathB: messageB. Value given `invalidB`.", $exception->getMessage());
         static::assertSame($list, $exception->getViolations());
     }
 }
