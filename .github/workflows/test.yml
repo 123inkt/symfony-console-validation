@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-progress --no-suggest --prefer-stable
       - name: Run test suite
-        run: php -dpcov.enabled=1 -dpcov.exclude="~vendor~" vendor/bin/phpunit --coverage-clover ./.coverage/coverage.xml
+        run: php -dpcov.enabled=1 -dpcov.exclude="~vendor~" vendor/bin/phpunit --testsuite unit --coverage-clover ./.coverage/coverage.xml
       - name: Check coverage
         run: php vendor/bin/phpfci inspect ./.coverage/coverage.xml ./.coverage/phpfci.xml --exit-code-on-failure
   quality:
