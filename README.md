@@ -2,8 +2,8 @@
 [![Minimum Symfony Version](https://img.shields.io/badge/symfony-%3E%3D%206.0-brightgreen)](https://symfony.com/doc/current/validation.html)
 ![Run checks](https://github.com/123inkt/symfony-console-validation/workflows/Run%checks/badge.svg)
 
-# Symfony Input Validation
-An input validation component for Symfony. Ease the validation of input arguments and options.
+# Symfony Console Validation
+An input validation component for Symfony Console. Ease the validation of input arguments and options.
 
 ## Installation
 Include the library as dependency in your own project via:
@@ -71,7 +71,7 @@ class ExampleCommand extends Command
 
 ## Manual invalid input handling
 
-The `validate` method will by default throw a ViolationException. To handle the violations yourself:
+The `validate` method will by default throw a `ViolationException`. To handle the violations yourself:
 ```php
 class ExampleCommand extends Command
 {
