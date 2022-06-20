@@ -25,7 +25,7 @@ class ViolationExceptionTest extends TestCase
         $list       = new ConstraintViolationList([$violationA, $violationB]);
 
         $exception = new ViolationException($list);
-        static::assertSame("pathA: messageA. Value given `invalidA`.\npathB: messageB. Value given `invalidB`.", $exception->getMessage());
+        static::assertSame("pathA: `invalidA`. messageA\npathB: `invalidB`. messageB", $exception->getMessage());
         static::assertSame($list, $exception->getViolations());
     }
 }
