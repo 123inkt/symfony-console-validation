@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Mock;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Mock;
 
-use DigitalRevolution\SymfonyInputValidation\AbstractValidatedInput;
-use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput;
+use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 
 class MockValidatedInput extends AbstractValidatedInput
 {

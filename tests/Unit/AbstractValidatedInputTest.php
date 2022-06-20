@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 
-use DigitalRevolution\SymfonyInputValidation\Tests\Mock\MockValidatedInput;
+use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\AbstractValidatedInput
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput
  * @covers ::__construct
  */
 class AbstractValidatedInputTest extends TestCase

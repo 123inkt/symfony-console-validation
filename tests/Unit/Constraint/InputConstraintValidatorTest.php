@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraint;
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintValidator;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintValidator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintValidator
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintValidator
  */
 class InputConstraintValidatorTest extends TestCase
 {
@@ -45,7 +45,7 @@ class InputConstraintValidatorTest extends TestCase
 
     /**
      * @param array<string, string> $data
-     * @dataProvider \DigitalRevolution\SymfonyInputValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::argumentDataProvider
+     * @dataProvider \DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::argumentDataProvider
      * @covers ::validate
      */
     public function testValidateArguments(array $data, bool $success): void
@@ -60,7 +60,7 @@ class InputConstraintValidatorTest extends TestCase
 
     /**
      * @param array<string, string> $data
-     * @dataProvider \DigitalRevolution\SymfonyInputValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::optionDataProvider
+     * @dataProvider \DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::optionDataProvider
      * @covers ::validate
      */
     public function testValidateOptions(array $data, bool $success): void

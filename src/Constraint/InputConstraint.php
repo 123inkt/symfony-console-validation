@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 

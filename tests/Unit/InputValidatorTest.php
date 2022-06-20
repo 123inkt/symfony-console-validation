@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraint;
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory;
-use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
-use DigitalRevolution\SymfonyInputValidation\InputValidator;
-use DigitalRevolution\SymfonyInputValidation\Tests\Mock\MockValidatedInput;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory;
+use DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException;
+use DigitalRevolution\SymfonyConsoleValidation\InputValidator;
+use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -17,7 +17,7 @@ use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\InputValidator
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\InputValidator
  * @covers ::__construct
  */
 class InputValidatorTest extends TestCase

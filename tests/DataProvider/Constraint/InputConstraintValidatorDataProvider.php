@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\DataProvider\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint;
 
 class InputConstraintValidatorDataProvider
 {

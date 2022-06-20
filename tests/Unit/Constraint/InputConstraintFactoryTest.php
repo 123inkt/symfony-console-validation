@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraint;
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory;
-use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory;
+use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory
  * @covers ::__construct
  */
 class InputConstraintFactoryTest extends TestCase

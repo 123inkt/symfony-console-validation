@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraint;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraint
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint
  */
 class InputConstraintTest extends TestCase
 {

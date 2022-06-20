@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Constraint;
+namespace DigitalRevolution\SymfonyConsoleValidation\Constraint;
 
-use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use Symfony\Component\Validator\Constraint;

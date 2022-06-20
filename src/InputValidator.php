@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation;
+namespace DigitalRevolution\SymfonyConsoleValidation;
 
-use DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintFactory;
-use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
+use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory;
+use DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use Symfony\Component\Console\Input\InputInterface;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Exception;
+namespace DigitalRevolution\SymfonyConsoleValidation\Exception;
 
 use Exception;
 use Symfony\Component\Validator\ConstraintViolationInterface;

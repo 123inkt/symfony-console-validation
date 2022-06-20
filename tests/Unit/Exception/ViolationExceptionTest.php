@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit\Exception;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Exception;
 
-use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
+use DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Exception\ViolationException
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException
  * @covers ::__construct
  */
 class ViolationExceptionTest extends TestCase

@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace DigitalRevolution\SymfonyInputValidation\Tests\Unit;
+namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 
-use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\ValidationRules
+ * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\ValidationRules
  */
 class ValidationRulesTest extends TestCase
 {

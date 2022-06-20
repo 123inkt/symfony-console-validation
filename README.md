@@ -1,6 +1,6 @@
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.0-8892BF)](https://php.net/)
 [![Minimum Symfony Version](https://img.shields.io/badge/symfony-%3E%3D%206.0-brightgreen)](https://symfony.com/doc/current/validation.html)
-![Run checks](https://github.com/123inkt/symfony-input-validation/workflows/Run%checks/badge.svg)
+![Run checks](https://github.com/123inkt/symfony-console-validation/workflows/Run%checks/badge.svg)
 
 # Symfony Input Validation
 An input validation component for Symfony. Ease the validation of input arguments and options.
@@ -8,7 +8,7 @@ An input validation component for Symfony. Ease the validation of input argument
 ## Installation
 Include the library as dependency in your own project via:
 ```
-composer require "digitalrevolution/symfony-input-validation"
+composer require "digitalrevolution/symfony-console-validation"
 ```
 
 ## Usage
@@ -19,8 +19,8 @@ composer require "digitalrevolution/symfony-input-validation"
 3) Ensure the `InputValidator` class is registered as [service in your Symfony project](https://symfony.com/doc/current/service_container.html).
 
 ```php
-use DigitalRevolution\SymfonyInputValidation\AbstractValidatedInput;
-use DigitalRevolution\SymfonyInputValidation\ValidationRules;
+use DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput;
+use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 
 class ExampleInput extends AbstractValidatedInput
 {
