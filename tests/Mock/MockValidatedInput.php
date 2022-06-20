@@ -8,8 +8,10 @@ use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 
 class MockValidatedInput extends AbstractValidatedInput
 {
+    public static ?ValidationRules $validationRules = null;
+
     public function getValidationRules(): ValidationRules
     {
-        return new ValidationRules();
+        return self::$validationRules ?? new ValidationRules();
     }
 }

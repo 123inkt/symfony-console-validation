@@ -19,10 +19,10 @@ class ViolationException extends Exception
         /** @var ConstraintViolationInterface $violation */
         foreach ($this->violations as $violation) {
             $messages[] = sprintf(
-                '%s: %s. Value given `%s`.',
+                '%s: `%s`. %s',
                 str_replace(['[', ']'], '', $violation->getPropertyPath()),
+                is_scalar($violation->getInvalidValue()) ? $violation->getInvalidValue() : 'null',
                 $violation->getMessage(),
-                is_scalar($violation->getInvalidValue()) ? $violation->getInvalidValue() : 'mixed'
             );
         }
 
