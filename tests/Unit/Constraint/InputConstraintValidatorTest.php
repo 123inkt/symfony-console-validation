@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @coversDefaultClass
+ * @coversDefaultClass \DigitalRevolution\SymfonyInputValidation\Constraint\InputConstraintValidator
  */
 class InputConstraintValidatorTest extends TestCase
 {

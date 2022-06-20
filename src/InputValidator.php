@@ -8,6 +8,7 @@ use DigitalRevolution\SymfonyInputValidation\Exception\ViolationException;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class InputValidator
@@ -27,13 +28,21 @@ class InputValidator
      */
     public function validate(InputInterface $input, string $validatedInputClass, bool $throw = true): AbstractValidatedInput
     {
-        $constraint = $this->constraintFactory->createConstraint($validatedInputClass::getValidationRules());
+        $violationList  = new ConstraintViolationList();
+        $validatedInput = new $validatedInputClass($input, $violationList);
+
+        // validate
+        $constraint = $this->constraintFactory->createConstraint($validatedInput->getValidationRules());
         $violations = $this->validator->validate($input, $constraint);
 
+        // throw exception if requested
         if ($throw && count($violations) > 0) {
             throw new ViolationException($violations);
         }
 
-        return new $validatedInputClass($input, $violations);
+        // otherwise add violations to input
+        $violationList->addAll($violations);
+
+        return $validatedInput;
     }
 }

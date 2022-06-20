@@ -16,7 +16,7 @@ composer require "digitalrevolution/symfony-input-validation"
 1) Create your own `ExampleInput` class which extends the `AbstractValidatedInput` class.
 2) Configure your own `ValidationRules`. See the [Validation shorthand library](https://github.com/123inkt/symfony-validation-shorthand) for
    more information about the rules.
-3) Ensure your `InputValidator` class is registered as [service in your Symfony project](https://symfony.com/doc/current/service_container.html).
+3) Ensure the `InputValidator` class is registered as [service in your Symfony project](https://symfony.com/doc/current/service_container.html).
 
 ```php
 use DigitalRevolution\SymfonyInputValidation\AbstractValidatedInput;

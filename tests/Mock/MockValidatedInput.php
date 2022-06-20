@@ -8,7 +8,7 @@ use DigitalRevolution\SymfonyInputValidation\ValidationRules;
 
 class MockValidatedInput extends AbstractValidatedInput
 {
-    public static function getValidationRules(): ValidationRules
+    public function getValidationRules(): ValidationRules
     {
         return new ValidationRules();
     }

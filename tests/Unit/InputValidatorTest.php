@@ -72,7 +72,7 @@ class InputValidatorTest extends TestCase
 
         $validatedInput = $this->inputValidator->validate($input, MockValidatedInput::class, false);
         static::assertFalse($validatedInput->isValid());
-        static::assertSame($violationList, $validatedInput->getViolations());
+        static::assertSame($violation, $validatedInput->getViolations()->get(0));
     }
 
 
@@ -91,6 +91,6 @@ class InputValidatorTest extends TestCase
 
         $validatedInput = $this->inputValidator->validate($input, MockValidatedInput::class);
         static::assertTrue($validatedInput->isValid());
-        static::assertSame($violationList, $validatedInput->getViolations());
+        static::assertCount(0, $validatedInput->getViolations());
     }
 }

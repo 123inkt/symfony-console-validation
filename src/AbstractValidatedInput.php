@@ -46,5 +46,5 @@ abstract class AbstractValidatedInput
     /**
      * Get all the constraints for the current input
      */
-    abstract public static function getValidationRules(): ValidationRules;
+    abstract public function getValidationRules(): ValidationRules;
 }
