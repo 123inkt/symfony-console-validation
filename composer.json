@@ -1,17 +1,17 @@
 {
-    "name": "digitalrevolution/symfony-input-validation",
+    "name": "digitalrevolution/symfony-console-validation",
     "description": "Symfony command input argument and option validation",
     "type": "symfony-bundle",
     "license": "MIT",
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "DigitalRevolution\\SymfonyInputValidation\\": "src/"
+            "DigitalRevolution\\SymfonyConsoleValidation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DigitalRevolution\\SymfonyInputValidation\\Tests\\": "tests/"
+            "DigitalRevolution\\SymfonyConsoleValidation\\Tests\\": "tests/"
         }
     },
     "require": {
