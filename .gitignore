@@ -2,4 +2,5 @@
 /vendor
 /composer.lock
 /phpunit.xml
+/.coverage/
 /.phpunit.result.cache
