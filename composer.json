@@ -13,8 +13,8 @@
     "require": {
         "php": ">=8.0",
         "digitalrevolution/symfony-validation-shorthand": "^1.0.4",
-        "symfony/console": "^6.0",
-        "symfony/validator": "^6.0"
+        "symfony/console": "^6.0 || ^7.0",
+        "symfony/validator": "^6.0 || ^7.0"
     },
     "require-dev": {
         "digitalrevolution/phpunit-file-coverage-inspection": "^v1.0",
