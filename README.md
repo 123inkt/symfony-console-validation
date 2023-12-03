@@ -1,6 +1,6 @@
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.0-8892BF)](https://php.net/)
-[![Minimum Symfony Version](https://img.shields.io/badge/symfony-%3E%3D%206.0-brightgreen)](https://symfony.com/doc/current/validation.html)
-![Run checks](https://github.com/123inkt/symfony-console-validation/workflows/Run%checks/badge.svg)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF)](https://php.net/)
+[![Minimum Symfony Version](https://img.shields.io/badge/symfony-%3E%3D%206.2-brightgreen)](https://symfony.com/doc/current/validation.html)
+![Run checks](https://github.com/123inkt/symfony-console-validation/actions/workflows/test.yml/badge.svg)
 
 # Symfony Console Validation
 An input validation component for Symfony Console. Ease the validation of input arguments and options.
