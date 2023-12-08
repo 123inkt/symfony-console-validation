@@ -8,7 +8,7 @@ An input validation component for Symfony Console. Ease the validation of input 
 ## Installation
 Include the library as dependency in your own project via:
 ```
-composer require "digitalrevolution/symfony-console-validation"
+composer require digitalrevolution/symfony-console-validation
 ```
 
 ## Usage
