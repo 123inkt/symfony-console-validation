@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraint;
 
 class InputConstraint extends Constraint
 {
+    /** @var string */
     public const WRONG_VALUE_TYPE = '67ff49d5-9a61-47ad-80f1-960fd2beab6f';
 
     protected const ERROR_NAMES = [self::WRONG_VALUE_TYPE => 'WRONG_VALUE_TYPE',];
