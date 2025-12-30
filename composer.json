@@ -1,7 +1,7 @@
 {
     "name": "digitalrevolution/symfony-console-validation",
     "description": "Symfony command input argument and option validation",
-    "type": "symfony-bundle",
+    "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
     "config": {
