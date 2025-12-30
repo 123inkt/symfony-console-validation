@@ -14,30 +14,12 @@ class InputConstraint extends Constraint
 
     public string $wrongTypeMessage = 'Expect value to be of type Symfony\Component\Console\Input\InputInterface';
 
-    /** @var Constraint|Constraint[]|null */
-    public Constraint|array|null $arguments;
-
-    /** @var Constraint|Constraint[]|null */
-    public Constraint|array|null $options;
-
     /**
-     * @param array{
-     *     arguments?: Constraint|Constraint[],
-     *     options?: Constraint|Constraint[]
-     * }|null $options
+     * @param Constraint|Constraint[]|null $arguments
+     * @param Constraint|Constraint[]|null $options
      */
-    public function __construct(?array $options = null)
+    public function __construct(public Constraint|array|null $arguments = null, public Constraint|array|null $options = null)
     {
-        // make sure defaults are set
-        $options              = $options ?? [];
-        $options['arguments'] = $options['arguments'] ?? null;
-        $options['options']   = $options['options'] ?? null;
-
-        parent::__construct($options);
-    }
-
-    public function getRequiredOptions(): array
-    {
-        return ['arguments', 'options'];
+        parent::__construct();
     }
 }
