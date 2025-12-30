@@ -5,6 +5,9 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
 use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
 use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintValidator;
+use DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -16,9 +19,7 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Validation;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintValidator
- */
+#[CoversClass(InputConstraintValidator::class)]
 class InputConstraintValidatorTest extends TestCase
 {
     private ExecutionContext         $context;
@@ -34,9 +35,6 @@ class InputConstraintValidatorTest extends TestCase
         $this->validator->initialize($this->context);
     }
 
-    /**
-     * @covers ::validate
-     */
     public function testValidateUnexpectedTypeException(): void
     {
         $this->expectException(UnexpectedTypeException::class);
@@ -45,9 +43,8 @@ class InputConstraintValidatorTest extends TestCase
 
     /**
      * @param array<string, string> $data
-     * @dataProvider \DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::argumentDataProvider
-     * @covers ::validate
      */
+    #[DataProviderExternal(InputConstraintValidatorDataProvider::class, 'argumentDataProvider')]
     public function testValidateArguments(array $data, bool $success): void
     {
         $definition = new InputDefinition([new InputArgument('email', InputArgument::REQUIRED)]);
@@ -60,9 +57,8 @@ class InputConstraintValidatorTest extends TestCase
 
     /**
      * @param array<string, string> $data
-     * @dataProvider \DigitalRevolution\SymfonyConsoleValidation\Tests\DataProvider\Constraint\InputConstraintValidatorDataProvider::optionDataProvider
-     * @covers ::validate
      */
+    #[DataProviderExternal(InputConstraintValidatorDataProvider::class, 'optionDataProvider')]
     public function testValidateOptions(array $data, bool $success): void
     {
         $definition = new InputDefinition(
@@ -78,9 +74,6 @@ class InputConstraintValidatorTest extends TestCase
         static::assertCount($success ? 0 : 1, $this->context->getViolations());
     }
 
-    /**
-     * @covers ::validate
-     */
     public function testValidateNullInput(): void
     {
         $input      = null;
@@ -90,9 +83,6 @@ class InputConstraintValidatorTest extends TestCase
         static::assertCount(0, $this->context->getViolations());
     }
 
-    /**
-     * @covers ::validate
-     */
     public function testValidateWrongTypeViolation(): void
     {
         $input      = 5;

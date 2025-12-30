@@ -4,20 +4,14 @@ declare(strict_types=1);
 namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Exception;
 
 use DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException
- * @covers ::__construct
- */
+#[CoversClass(ViolationException::class)]
 class ViolationExceptionTest extends TestCase
 {
-    /**
-     * @covers ::__construct
-     * @covers ::getViolations
-     */
     public function testConstruct(): void
     {
         $violationA = new ConstraintViolation('messageA', null, [], null, 'pathA', 'invalidA');
