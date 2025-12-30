@@ -18,7 +18,7 @@
         "symfony/validator": "^6.2  || ^7.0"
     },
     "require-dev": {
-        "digitalrevolution/phpunit-file-coverage-inspection": "^v2.0.0",
+        "digitalrevolution/phpunit-file-coverage-inspection": "^v3.0.0",
         "roave/security-advisories": "dev-latest",
         "squizlabs/php_codesniffer": "^4.0",
         "phpmd/phpmd": "^2.14",
