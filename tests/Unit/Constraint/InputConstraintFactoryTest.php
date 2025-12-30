@@ -47,6 +47,6 @@ class InputConstraintFactoryTest extends TestCase
         $constraintA = new Assert\NotNull();
         $constraintB = new Assert\NotBlank();
         $result      = $this->factory->createConstraint(new ValidationRules(['arguments' => $constraintA, 'options' => $constraintB]));
-        static::assertEquals(new InputConstraint(['arguments' => $constraintA, 'options' => $constraintB]), $result);
+        static::assertEquals(new InputConstraint($constraintA, $constraintB), $result);
     }
 }

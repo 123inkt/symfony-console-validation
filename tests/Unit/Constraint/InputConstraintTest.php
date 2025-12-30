@@ -31,26 +31,8 @@ class InputConstraintTest extends TestCase
     {
         $constraintA = new NotBlank();
         $constraintB = new NotNull();
-        $constraint  = new InputConstraint(['arguments' => $constraintA, 'options' => $constraintB]);
+        $constraint  = new InputConstraint($constraintA, $constraintB);
         static::assertSame($constraintA, $constraint->arguments);
         static::assertSame($constraintB, $constraint->options);
-    }
-
-    /**
-     * @covers ::__construct
-     */
-    public function testConstructIncorrectOption(): void
-    {
-        $this->expectException(InvalidOptionsException::class);
-        new InputConstraint(['invalid' => 'invalid']);
-    }
-
-    /**
-     * @covers ::getRequiredOptions
-     */
-    public function testGetRequiredOptions(): void
-    {
-        $constraint = new InputConstraint();
-        static::assertSame(['arguments', 'options'], $constraint->getRequiredOptions());
     }
 }
