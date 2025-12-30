@@ -8,13 +8,12 @@ use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory
 use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraintFactory
- * @covers ::__construct
- */
+#[CoversClass(InputConstraintFactory::class)]
 class InputConstraintFactoryTest extends TestCase
 {
     private InputConstraintFactory $factory;

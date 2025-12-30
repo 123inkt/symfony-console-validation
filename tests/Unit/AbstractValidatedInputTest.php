@@ -3,21 +3,18 @@ declare(strict_types=1);
 
 namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 
+use DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput;
 use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput
- * @covers ::__construct
- */
+#[CoversClass(AbstractValidatedInput::class)]
 class AbstractValidatedInputTest extends TestCase
 {
-    /**
-     * @covers ::isValid
-     */
     public function testIsValid(): void
     {
         $list = new ConstraintViolationList();
@@ -29,9 +26,6 @@ class AbstractValidatedInputTest extends TestCase
         static::assertFalse($validatedInput->isValid());
     }
 
-    /**
-     * @covers ::getViolations
-     */
     public function testGetViolations(): void
     {
         $list           = new ConstraintViolationList([new ConstraintViolation('message', null, [], null, 'path', null)]);
@@ -40,9 +34,6 @@ class AbstractValidatedInputTest extends TestCase
         static::assertSame($list, $validatedInput->getViolations());
     }
 
-    /**
-     * @covers ::getViolationMessages
-     */
     public function testGetViolationMessages(): void
     {
         $list           = new ConstraintViolationList([new ConstraintViolation('message', null, [], null, 'path', null)]);

@@ -8,6 +8,7 @@ use DigitalRevolution\SymfonyConsoleValidation\InputValidator;
 use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
 use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,9 +16,7 @@ use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Validator\Validation;
 
-/**
- * @coversNothing
- */
+#[CoversNothing]
 class InputValidatorTest extends TestCase
 {
     private InputValidator $validator;
