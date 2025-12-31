@@ -5,11 +5,9 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
 use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotNull;
-use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
 #[CoversClass(InputConstraint::class)]
 class InputConstraintTest extends TestCase

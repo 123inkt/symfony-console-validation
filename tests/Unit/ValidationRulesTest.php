@@ -6,7 +6,6 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(ValidationRules::class)]
