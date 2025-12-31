@@ -9,6 +9,7 @@ use DigitalRevolution\SymfonyConsoleValidation\Exception\ViolationException;
 use DigitalRevolution\SymfonyConsoleValidation\InputValidator;
 use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -16,17 +17,12 @@ use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\InputValidator
- * @covers ::__construct
- */
+#[CoversClass(InputValidator::class)]
 class InputValidatorTest extends TestCase
 {
-    /** @var InputConstraintFactory&MockObject */
-    private InputConstraintFactory $constraintFactory;
-    /** @var ValidatorInterface&MockObject */
-    private ValidatorInterface $validator;
-    private InputValidator     $inputValidator;
+    private InputConstraintFactory&MockObject $constraintFactory;
+    private ValidatorInterface&MockObject $validator;
+    private InputValidator $inputValidator;
 
     protected function setUp(): void
     {
@@ -37,7 +33,6 @@ class InputValidatorTest extends TestCase
     }
 
     /**
-     * @covers ::validate
      * @throws InvalidRuleException
      */
     public function testValidateFailureWithThrows(): void
@@ -56,7 +51,6 @@ class InputValidatorTest extends TestCase
     }
 
     /**
-     * @covers ::validate
      * @throws InvalidRuleException|ViolationException
      */
     public function testValidateFailureWithoutThrows(): void
@@ -77,7 +71,6 @@ class InputValidatorTest extends TestCase
 
 
     /**
-     * @covers ::validate
      * @throws InvalidRuleException|ViolationException
      */
     public function testValidateSuccess(): void

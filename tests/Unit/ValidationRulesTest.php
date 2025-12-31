@@ -5,17 +5,13 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 
 use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\ValidationRules
- */
+#[CoversClass(ValidationRules::class)]
 class ValidationRulesTest extends TestCase
 {
-    /**
-     * @covers ::__construct
-     * @covers ::getDefinitions
-     */
     public function testConstructor(): void
     {
         $config = [
@@ -27,10 +23,6 @@ class ValidationRulesTest extends TestCase
         static::assertSame($config, $rules->getDefinitions());
     }
 
-    /**
-     * @covers ::__construct
-     * @covers ::getDefinitions
-     */
     public function testConstructorFailure(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -38,10 +30,6 @@ class ValidationRulesTest extends TestCase
         new ValidationRules(['foobar']);
     }
 
-    /**
-     * @covers ::addArgumentConstraint
-     * @covers ::getDefinitions
-     */
     public function testAddArgumentConstraint(): void
     {
         $rules = new ValidationRules();
@@ -49,10 +37,6 @@ class ValidationRulesTest extends TestCase
         static::assertSame(['arguments' => ['email' => 'required|string']], $rules->getDefinitions());
     }
 
-    /**
-     * @covers ::addOptionConstraint
-     * @covers ::getDefinitions
-     */
     public function testAddOptionConstraint(): void
     {
         $rules = new ValidationRules();

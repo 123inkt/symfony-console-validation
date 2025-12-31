@@ -4,19 +4,16 @@ declare(strict_types=1);
 namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit\Constraint;
 
 use DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
-/**
- * @coversDefaultClass \DigitalRevolution\SymfonyConsoleValidation\Constraint\InputConstraint
- */
+#[CoversClass(InputConstraint::class)]
 class InputConstraintTest extends TestCase
 {
-    /**
-     * @covers ::__construct
-     */
     public function testConstructDefaultOptions(): void
     {
         $constraint = new InputConstraint();
@@ -24,9 +21,6 @@ class InputConstraintTest extends TestCase
         static::assertNull($constraint->options);
     }
 
-    /**
-     * @covers ::__construct
-     */
     public function testConstructConstraintOptions(): void
     {
         $constraintA = new NotBlank();
@@ -36,18 +30,12 @@ class InputConstraintTest extends TestCase
         static::assertSame($constraintB, $constraint->options);
     }
 
-    /**
-     * @covers ::__construct
-     */
     public function testConstructIncorrectOption(): void
     {
         $this->expectException(InvalidOptionsException::class);
         new InputConstraint(['invalid' => 'invalid']);
     }
 
-    /**
-     * @covers ::getRequiredOptions
-     */
     public function testGetRequiredOptions(): void
     {
         $constraint = new InputConstraint();
