@@ -1,7 +1,7 @@
 {
     "name": "digitalrevolution/symfony-console-validation",
     "description": "Symfony command input argument and option validation",
-    "type": "symfony-bundle",
+    "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
     "config": {
@@ -15,14 +15,14 @@
         "php": ">=8.1",
         "digitalrevolution/symfony-validation-shorthand": "^1.0.4 || ^2.0.0",
         "symfony/console": "^6.2 || ^7.0 || ^8.0",
-        "symfony/validator": "^6.2  || ^7.0 || ^8.0"
+        "symfony/validator": "^6.2 || ^7.0 || ^8.0"
     },
     "require-dev": {
         "digitalrevolution/phpunit-file-coverage-inspection": "^v3.0.0",
         "roave/security-advisories": "dev-latest",
         "squizlabs/php_codesniffer": "^4.0",
         "phpmd/phpmd": "^2.14",
-        "phpunit/phpunit": "^9.6",
+        "phpunit/phpunit": "^10.5.60 || ^11.5.46 || ^12.0",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
