@@ -6,15 +6,11 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Constraint;
 use DigitalRevolution\SymfonyConsoleValidation\ValidationRules;
 use DigitalRevolution\SymfonyValidationShorthand\ConstraintFactory;
 use DigitalRevolution\SymfonyValidationShorthand\Rule\InvalidRuleException;
-use Symfony\Component\Validator\Constraint;
 
 class InputConstraintFactory
 {
-    private ConstraintFactory $factory;
-
-    public function __construct(ConstraintFactory $factory = null)
+    public function __construct(private ConstraintFactory $factory = new ConstraintFactory())
     {
-        $this->factory = $factory ?? new ConstraintFactory();
     }
 
     /**
@@ -22,11 +18,16 @@ class InputConstraintFactory
      */
     public function createConstraint(ValidationRules $validationRules): InputConstraint
     {
-        $options = [];
-        foreach ($validationRules->getDefinitions() as $key => $definitions) {
-            $options[$key] = $this->factory->fromRuleDefinitions($definitions, true);
+        $definitions = $validationRules->getDefinitions();
+        $arguments   = $options = null;
+
+        if (isset($definitions['arguments'])) {
+            $arguments = $this->factory->fromRuleDefinitions($definitions['arguments'], true);
+        }
+        if (isset($definitions['options'])) {
+            $options = $this->factory->fromRuleDefinitions($definitions['options'], true);
         }
 
-        return new InputConstraint($options);
+        return new InputConstraint($arguments, $options);
     }
 }

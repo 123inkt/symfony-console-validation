@@ -49,7 +49,7 @@ class InputConstraintValidatorTest extends TestCase
     {
         $definition = new InputDefinition([new InputArgument('email', InputArgument::REQUIRED)]);
         $input      = new ArrayInput($data, $definition);
-        $constraint = new InputConstraint(['arguments' => new Assert\Collection(['email' => new Assert\Required(new Assert\Email())])]);
+        $constraint = new InputConstraint(new Assert\Collection(['email' => new Assert\Required(new Assert\Email())]));
         $this->context->setConstraint($constraint);
         $this->validator->validate($input, $constraint);
         static::assertCount($success ? 0 : 1, $this->context->getViolations());
@@ -68,7 +68,7 @@ class InputConstraintValidatorTest extends TestCase
             ]
         );
         $input      = new ArrayInput($data, $definition);
-        $constraint = new InputConstraint(['options' => new Assert\Collection(['email' => new Assert\Optional(new Assert\Email())])]);
+        $constraint = new InputConstraint(options: new Assert\Collection(['email' => new Assert\Optional(new Assert\Email())]));
         $this->context->setConstraint($constraint);
         $this->validator->validate($input, $constraint);
         static::assertCount($success ? 0 : 1, $this->context->getViolations());
