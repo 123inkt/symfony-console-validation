@@ -6,7 +6,6 @@ namespace DigitalRevolution\SymfonyConsoleValidation\Tests\Unit;
 use DigitalRevolution\SymfonyConsoleValidation\AbstractValidatedInput;
 use DigitalRevolution\SymfonyConsoleValidation\Tests\Mock\MockValidatedInput;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Validator\ConstraintViolation;
